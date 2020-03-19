@@ -7,7 +7,12 @@ export const Authentication = () => {
   const redirectUri = 'http://localhost:3000/home';
   const scopes = [
     'user-read-currently-playing',
-    'user-read-playback-state'
+    'user-read-playback-state',
+    'user-library-read',
+    'user-read-recently-played',
+    'playlist-read-private',
+    'playlist-read-collaborative',
+    'streaming'
   ];
 
   const hash = window.location.hash.substring(1).split('&').reduce((initial, item) => {
@@ -23,7 +28,7 @@ export const Authentication = () => {
     if (_token) {
       setToken(_token);
     }
-  }, [])
+  }, [hash]);
 
   return (
     <div>
@@ -31,7 +36,13 @@ export const Authentication = () => {
       {!token && (
         <a
           className='login-btn'
-          href={`${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`}
+          href={authEndpoint +
+            "?response_type=code" +
+            "&client_id=" +
+            clientId +
+            (`&scope=${scopes.join('%20')}`) +
+            "&redirect_uri=" +
+            encodeURIComponent(redirectUri)}
         >
           Login
         </a>
@@ -44,3 +55,4 @@ export const Authentication = () => {
     </div>
   )
 }
+
