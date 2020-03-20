@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { clientId } from '../../keys';
 
 export const Authentication = () => {
-  const [token, setToken] = useState('');
   const authEndpoint = 'https://accounts.spotify.com/authorize';
   const redirectUri = 'http://localhost:3000/home';
   const scopes = [
@@ -10,49 +9,47 @@ export const Authentication = () => {
     'user-read-playback-state',
     'user-library-read',
     'user-read-recently-played',
+    'user-top-read',
     'playlist-read-private',
     'playlist-read-collaborative',
+    'playlist-modify-public',
     'streaming'
   ];
 
-  const hash = window.location.hash.substring(1).split('&').reduce((initial, item) => {
-    if (item) {
-      let parts = item.split('=');
-      initial[parts[0]] = decodeURIComponent(parts[1]);
-    }
-    return initial;
-  }, {});
-
-  useEffect(() => {
-    let _token = hash.access_token;
-    if (_token) {
-      setToken(_token);
-    }
-  }, [hash]);
-
   return (
-    <div>
+    <div className='auth-section'>
       <h2>Authentication Login</h2>
-      {!token && (
         <a
           className='login-btn'
           href={authEndpoint +
-            "?response_type=code" +
-            "&client_id=" +
+            '?response_type=token' +
+            '&client_id=' +
             clientId +
             (`&scope=${scopes.join('%20')}`) +
-            "&redirect_uri=" +
-            encodeURIComponent(redirectUri)}
+            '&redirect_uri=' +
+            encodeURIComponent(redirectUri)
+          }
         >
           Login
         </a>
-      )}
-      {token && (
-        <div>
-
-        </div>
-      )}
     </div>
   )
 }
 
+
+  // const hash = window.location.href.substring(1).split('&').reduce((initial, item) => {
+  //   if (item) {
+  //     let parts = item.split('=');
+  //     initial[parts[0]] = decodeURIComponent(parts[1]);
+  //   }
+  //   return initial;
+  // }, {});
+
+  // console.log(hash);
+  // useEffect(() => {
+  //   let _token = hash.access_token;
+  //   if (_token) {
+  //     console.log('if block entered');
+  //     dispatch(setToken(_token));
+  //   }
+  // }, [hash, dispatch]);

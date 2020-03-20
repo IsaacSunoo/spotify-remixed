@@ -1,0 +1,27 @@
+.auth-section {
+  align-items: center;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  letter-spacing: 3px;
+
+  .login-btn {
+    background-color: $mainColor;
+    border-radius: 500px;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1.8px;
+    margin-top: 10px;
+    min-width: 160px;
+    outline: none;
+    padding: 11px 32px 9px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
