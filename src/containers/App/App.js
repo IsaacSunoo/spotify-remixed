@@ -12,8 +12,8 @@ export const App = () => {
       <Route path='/' component={Header} />
       <Route exact path='/' component={Authentication} />
       <Route path='/home' component={Home} />
-      <Route path='/home' component={TopArtists} />
-      <Route path='/home' component={SideBar} />
+      <Route path='/top-artists' component={TopArtists} />
+      <Route path='/(home|top-artists)' component={SideBar} />
     </div>
   );
 }

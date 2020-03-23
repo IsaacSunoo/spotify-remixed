@@ -1,14 +1,21 @@
 .sidebar-container {
   align-items: center;
-  background-color: #A0A0A0;
+  background-color: #c2c2c2;
   color: #464646;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   position: fixed;
   padding-top: 10%;
-  width: 15%;
+  width: 130px;
   top: 58px;
+  font-size: 12px;
+
+  .link-styles {
+    outline: none;
+    text-decoration: none;
+    color: #3b3b3b;
+  }
 
   article {
     display: flex;
@@ -24,14 +31,14 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .sidebar-container {
-    width: 20%;
-  }
-}
+// @media only screen and (max-width: 800px) {
+//   .sidebar-container {
+//     width: 20%;
+//   }
+// }
 
-@media only screen and (max-width: 615px) {
-  .sidebar-container {
-    width: 27%;
-  }
-}
+// @media only screen and (max-width: 615px) {
+//   .sidebar-container {
+//     width: 27%;
+//   }
+// }

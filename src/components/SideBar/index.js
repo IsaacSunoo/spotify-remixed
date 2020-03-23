@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const SideBar = () => {
   return (
     <section className='sidebar-container'>
-      <article>
-        <span className='material-icons star'>grade</span>
-        <p>Favorite Artists</p>
-      </article>
+      <Link to='top-artists' className='link-styles'>
+        <article>
+          <span className='material-icons star'>grade</span>
+          <p>Favorite Artists</p>
+        </article>
+      </Link>
       <article>
         <span className='material-icons'>favorite_border</span>
         <p>Favorite Songs</p>

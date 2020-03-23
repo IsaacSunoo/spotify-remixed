@@ -3,8 +3,6 @@ import { clientId } from '../../keys';
 import { config } from '../../config';
 
 export const Authentication = () => {
-  // const authEndpoint = 'https://accounts.spotify.com/authorize';
-  // const redirectUri = 'http://localhost:3000/home';
   const scopes = [
     'user-read-currently-playing',
     'user-read-playback-state',
@@ -38,21 +36,3 @@ export const Authentication = () => {
     </div>
   )
 }
-
-
-  // const hash = window.location.href.substring(1).split('&').reduce((initial, item) => {
-  //   if (item) {
-  //     let parts = item.split('=');
-  //     initial[parts[0]] = decodeURIComponent(parts[1]);
-  //   }
-  //   return initial;
-  // }, {});
-
-  // console.log(hash);
-  // useEffect(() => {
-  //   let _token = hash.access_token;
-  //   if (_token) {
-  //     console.log('if block entered');
-  //     dispatch(setToken(_token));
-  //   }
-  // }, [hash, dispatch]);

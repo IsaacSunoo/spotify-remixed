@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchOptions } from '../../utilities/fetchOptions';
 import { config } from '../../config';
+import { ArtistHeader } from './ArtistHeader';
 
 export const TopArtists = () => {
   const token = useSelector(state => state.token);
@@ -18,8 +19,8 @@ export const TopArtists = () => {
 
 
   return (
-    <div>
-
+    <div className='top-artists__container'>
+      <ArtistHeader />
     </div>
   )
 }
