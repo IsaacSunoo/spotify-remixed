@@ -1,0 +1,37 @@
+.sidebar-container {
+  align-items: center;
+  background-color: #A0A0A0;
+  color: #464646;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: fixed;
+  padding-top: 10%;
+  width: 15%;
+  top: 58px;
+
+  article {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 30px;
+
+    &:hover {
+      color: #2b2a2a;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .sidebar-container {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 615px) {
+  .sidebar-container {
+    width: 27%;
+  }
+}

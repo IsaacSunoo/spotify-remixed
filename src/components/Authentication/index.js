@@ -1,9 +1,10 @@
 import React from 'react';
 import { clientId } from '../../keys';
+import { config } from '../../config';
 
 export const Authentication = () => {
-  const authEndpoint = 'https://accounts.spotify.com/authorize';
-  const redirectUri = 'http://localhost:3000/home';
+  // const authEndpoint = 'https://accounts.spotify.com/authorize';
+  // const redirectUri = 'http://localhost:3000/home';
   const scopes = [
     'user-read-currently-playing',
     'user-read-playback-state',
@@ -16,18 +17,20 @@ export const Authentication = () => {
     'streaming'
   ];
 
+  console.log('***********', config.auth);
+
   return (
     <div className='auth-section'>
       <h2>Authentication Login</h2>
         <a
           className='login-btn'
-          href={authEndpoint +
+          href={config.auth +
             '?response_type=token' +
             '&client_id=' +
             clientId +
             (`&scope=${scopes.join('%20')}`) +
             '&redirect_uri=' +
-            encodeURIComponent(redirectUri)
+            encodeURIComponent(config.redirectURI)
           }
         >
           Login

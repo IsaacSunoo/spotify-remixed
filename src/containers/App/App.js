@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom';
 import { Header } from '../../components/Header';
 import { Authentication } from '../../components/Authentication';
 import { Home } from '../Home';
+import { TopArtists } from '../TopArtists';
+import { SideBar } from '../../components/SideBar';
 
 export const App = () => {
   return (
@@ -10,6 +12,8 @@ export const App = () => {
       <Route path='/' component={Header} />
       <Route exact path='/' component={Authentication} />
       <Route path='/home' component={Home} />
+      <Route path='/home' component={TopArtists} />
+      <Route path='/home' component={SideBar} />
     </div>
   );
 }
