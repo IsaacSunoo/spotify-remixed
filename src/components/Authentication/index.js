@@ -1,6 +1,7 @@
 import React from 'react';
 import { clientId } from '../../keys';
 import { config } from '../../config';
+import landingPage from '../../images/landingPage.jpg';
 
 export const Authentication = () => {
   const scopes = [
@@ -15,24 +16,25 @@ export const Authentication = () => {
     'streaming'
   ];
 
-  console.log('***********', config.auth);
-
   return (
     <div className='auth-section'>
-      <h2>Authentication Login</h2>
-        <a
-          className='login-btn'
-          href={config.auth +
-            '?response_type=token' +
-            '&client_id=' +
-            clientId +
-            (`&scope=${scopes.join('%20')}`) +
-            '&redirect_uri=' +
-            encodeURIComponent(config.redirectURI)
-          }
-        >
-          Login
-        </a>
+      <img src={landingPage} alt='woman in front of music' className='landing-image' />
+      <section className='login-section'>
+        <h2>Discover Your Music</h2>
+          <a
+            className='login-btn'
+            href={config.auth +
+              '?response_type=token' +
+              '&client_id=' +
+              clientId +
+              (`&scope=${scopes.join('%20')}`) +
+              '&redirect_uri=' +
+              encodeURIComponent(config.redirectURI)
+            }
+          >
+            Login
+          </a>
+      </section>
     </div>
   )
 }

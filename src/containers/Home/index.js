@@ -10,7 +10,7 @@ export const Home = () => {
   const _token1 = window.location.href.split('access_token=')[1];
   const _token = _token1.split('&')[0];
   const [user, setUser] = useState({});
-
+  
   useEffect(() => {
     dispatch(setToken(_token));
   }, [_token, dispatch]);

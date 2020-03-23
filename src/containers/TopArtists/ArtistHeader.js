@@ -1,6 +1,5 @@
 import React from 'react';
 import artists from '../../images/artists.jpg';
-import { Link } from 'react-router-dom';
 
 export const ArtistHeader = () => {
   return (
