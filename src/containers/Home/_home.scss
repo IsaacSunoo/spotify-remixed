@@ -1,4 +1,5 @@
 .home-page {
+  padding-top: 55px;
 
   h2 {
     display: flex;
@@ -8,6 +9,17 @@
     text-align: center;
     padding-top: 20px;
     letter-spacing: 1.3px;
+  }
+
+  .home-intro {
+    background-color: #c2c2c2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
   }
 
 }
