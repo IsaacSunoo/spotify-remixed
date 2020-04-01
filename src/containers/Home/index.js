@@ -1,13 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setToken } from '../../actions';
 import { fetchOptions } from '../../utilities/fetchOptions';
 import { config } from '../../config';
-import { Intro } from './Intro';
 
 export const Home = () => {
-  // eslint-disable-next-line no-unused-vars
   const token = useSelector(state => state.token);
   const dispatch = useDispatch();
   const _token1 = window.location.href.split('access_token=')[1];
@@ -32,7 +29,6 @@ export const Home = () => {
   return (
     <div className='home-page'>
       <h2>Welcome {user.display_name}!</h2>
-      <Intro />
     </div>
   )
 }

@@ -20,8 +20,6 @@ export const TopArtists = () => {
     fetchTopArtists();
   }, [token]);
 
-  console.log('*********', artists);
-
   let displayArtists;
 
   if (artists) {
